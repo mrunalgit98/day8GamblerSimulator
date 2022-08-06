@@ -5,24 +5,23 @@ public class Gambler {
 
     public static void main(String[] args) {
         System.out.println("welcome to gambling simulator");
-
-
         int stake=everyday;
-        while (stake>50 &&stake<150){
+
+        for(int i=0;i<=20;i++){
             int random=(int)Math.floor(Math.random()*10)%2;
 
             if(random==bet){
                 stake=stake+1;
                 System.out.println("win");
             }else {
-                stake=stake+1;
+                stake=stake-1;
+            }
                 System.out.println("loose");
-            }
-            if(stake==50){
-                System.out.println("player resigned due to loosing"+stake);
-            }else {
-                System.out.println("player resigned due to winning" + stake);
-            }
+        }
+        if(stake<everyday){
+            System.out.println("after 20 day player lost " +(everyday-stake)+"rs");
+        }else {
+            System.out.println("after 20 day player won " +(stake-everyday)+"rs");
         }
     }
 
